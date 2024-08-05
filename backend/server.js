@@ -9,6 +9,7 @@ import router from './routes/users.js'
 dotenv.config()
 
 const app = express()
+const PORT = process.env.PORT || 4000
 
 app.use(cors())
 
@@ -22,8 +23,8 @@ app.use('/', router)
 mongoose.connect(process.env.MONGODB_URI)
     .then(() => {
         // Ecoute des requêtes
-        app.listen(process.env.PORT, () => {
-            console.log(`Connnected to db & Listening on port ${process.env.PORT}`)
+        app.listen(PORT, () => {
+            console.log(`Connnected to db & Listening on port ${PORT}`)
         })
     })
     .catch(error => console.log(error))
