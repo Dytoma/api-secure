@@ -2,8 +2,8 @@
 
 import React from 'react'
 import Image from 'next/image'
-import { useUserContext } from '@/context/useUserContextHook'
-import { useLogout } from '@/context/useLogout'
+import { useUserContext } from '@/hooks/useUserContextHook'
+import { useLogout } from '@/hooks/useLogout'
 import { usePathname } from 'next/navigation'
 
 const SideView = ({ viewText, sideWidth }) => {

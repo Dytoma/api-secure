@@ -2,7 +2,7 @@
 
 import {useState} from 'react'
 
-import { useRegister } from '@/context/useRegister'
+import { useRegister } from '@/hooks/useRegister'
 
 const RegisterForm = () => {
     const [firstName, setFirstName] = useState('')

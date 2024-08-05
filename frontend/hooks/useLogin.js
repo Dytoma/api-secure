@@ -1,6 +1,5 @@
 import { useState } from "react"
 import { useUserContext } from "./useUserContextHook"
-import { redirect } from "next/navigation"
 import { useRouter } from "next/navigation"
 
 
@@ -14,7 +13,7 @@ export const useLogin = () => {
         setIsLoading(true);
         setError(null)
 
-        const response = await fetch("http://localhost:4000/login", {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_LINK}/login`, {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ emailAddress, password })

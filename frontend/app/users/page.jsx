@@ -1,12 +1,12 @@
 "use client"
 
 import SideView from "@/components/SideView"
-import { useUserContext } from "@/context/useUserContextHook"
+import { useUserContext } from "@/hooks/useUserContextHook"
 import Image from "next/image"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
-import { useLogout } from "@/context/useLogout"
+import { useLogout } from "@/hooks/useLogout"
 
 const Page = () => {
   const { user } = useUserContext()
@@ -20,7 +20,7 @@ const Page = () => {
 
   useEffect(() => {
     const fetchUsers = async () => {
-      const response = await fetch('http://localhost:4000/users', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_LINK}/users`, {
         headers: {
           'authorization': `Dytoma ${user.token}`
         }

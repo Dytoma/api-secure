@@ -3,7 +3,7 @@
 import SideView from "@/components/SideView"
 import Redirection from "@/components/Redirection"
 import RegisterForm from "@/components/RegisterForm"
-import { useUserContext } from "@/context/useUserContextHook"
+import { useUserContext } from "@/hooks/useUserContextHook"
 import { useRouter } from "next/navigation"
 
 const Page = () => {
