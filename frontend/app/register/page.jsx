@@ -15,7 +15,7 @@ const Page = () => {
   }
   return (
     <div className="page_layout">
-      <SideView viewText="Register Now!" sideWidth='w-screen lg:w-[47vw]' />
+      <SideView viewText="Register Now!" sideWidth="w-screen lg:w-[47vw]" />
       <div className="form_view">
         <div className="w-full">
           <h2 className="form_title">Let's get you in!</h2>
