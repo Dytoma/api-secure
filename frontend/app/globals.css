@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+label {
+  @apply font-dmSans font-medium text-base md:text-xl mb-2 md:mb-4 block;
+}
+
+input {
+  @apply py-3 pl-3 md:py-6 md:pl-6 border-lightGrey border-2 rounded-lg w-full;
+}
+
+input::placeholder {
+  @apply font-dmSans text-base text-[#BFC2C8];
+}
+
+.side {
+  @apply bg-cover bg-lightBlue bg-noise bg-repeat relative flex items-center justify-center lg:justify-start lg:pl-28 shadow-md;
+}
+
+.page_layout {
+  @apply flex flex-col lg:flex-row items-center;
+}
+
+.responsive_flex {
+  @apply flex flex-col md:flex-row;
+}
+
+.form_col {
+  @apply flex flex-col gap-5 md:gap-10;
+}
+
+.form_title {
+  @apply font-bold font-dmSans text-3xl md:text-5xl;
+}
+
+.form_view {
+  @apply lg:h-screen flex items-center w-screen lg:w-auto grow px-7 py-10 md:py-20 lg:py-0 lg:px-52;
+}
+
+.paragraph_text {
+  @apply font-inter font-medium text-lightGrey text-base;
+}
+
+.submit_btn {
+  @apply w-full font-dmSans font-medium text-white text-xl md:text-2xl text-center py-[1.125rem] bg-lightBlue rounded-lg;
+}
+
+.headline {
+  @apply font-dmSans font-bold text-4xl lg:text-[4rem] lg:leading-normal;
+}
+
+.btn_hover {
+  @apply transition-all duration-300 ease-in-out shadow-md hover:bg-white hover:text-lightBlue border-2 hover:border-lightBlue;
+}
+
+.error {
+  @apply font-inter font-medium text-red-700 text-base py-3 px-8 rounded-lg border-[1px] border-red-500 bg-red-300;
+}
