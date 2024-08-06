@@ -72,7 +72,7 @@ const RegisterForm = () => {
                         value={password}
                     />
                 </div>
-                <button type='submit' className='submit_btn btn_hover' disabled={isLoading}>Register</button>
+                <button type='submit' className='submit_btn btn_hover' disabled={isLoading}>{isLoading ? 'Loading...': 'Register'}</button>
                 {error && <p className='paragraph_text error'>{error}</p>}
             </form>
         </div>

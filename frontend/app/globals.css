@@ -128,7 +128,7 @@ input::placeholder {
 }
 
 .btn_hover {
-  @apply transition-all duration-300 ease-in-out shadow-md hover:bg-white hover:text-lightBlue border-2 hover:border-lightBlue disabled:opacity-70;
+  @apply transition-all duration-300 ease-in-out shadow-md hover:bg-white hover:text-lightBlue disabled:text-white border-2 hover:border-lightBlue disabled:bg-lightBlue disabled:opacity-70;
 }
 
 .error {
