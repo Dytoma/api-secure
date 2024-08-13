@@ -14,9 +14,11 @@ const Page = () => {
   const [users, setUsers] = useState(null)
   const { logout } = useLogout()
 
-  if (!user) {
-    router.push('/login')
-  }
+  useEffect(() => {
+    if (!user) {
+      router.push('/login')
+    }
+  })
 
   useEffect(() => {
     const fetchUsers = async () => {
