@@ -92,7 +92,7 @@ export const updateUser = async (req, res) => {
         }
         if (newPassword) {
             checkCredentials(emailAddress, newPassword)
-            newUser = await User.findOneAndUpdate({ _id }, { firstName, lastName, emailAddress, password: newPassword })
+            newUser = await User.findOneAndUpdate({ _id }, { firstName, lastName, emailAddress, password: getHash(newPassword) })
         } else {
             checkCredentials(emailAddress, password)
             newUser = await User.findOneAndUpdate({ _id }, { firstName, lastName, emailAddress})
