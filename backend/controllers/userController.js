@@ -26,6 +26,22 @@ const checkCredentials = (emailAddress, password) => {
     }
 }
 
+// vérifier les données du formulaire
+const checkUpdateFields = (firstName, lastName, emailAddress, password) => {
+    if (!firstName) {
+        throw Error('The firstname is required')
+    }
+    if (!lastName) {
+        throw Error('The lastname is required')
+    }
+    if (!emailAddress) {
+        throw Error('The email address is required')
+    }
+    if (!password) {
+        throw Error('The password is required')
+    }
+}
+
 // Enregistrer un nouveau utilisateur
 export const registerUser = async (req, res) => {
     const { firstName, lastName, emailAddress, password } = req.body
@@ -79,9 +95,7 @@ export const updateUser = async (req, res) => {
     let newUser = null
 
     try {
-        if (!firstName || !emailAddress || !password || !lastName) {
-            return res.status(404).json({ error: 'All fields must be filled' })
-        }
+        checkUpdateFields(firstName, lastName, emailAddress, password)
         const user = await User.findOne({ _id })
         
         if (!user) {
