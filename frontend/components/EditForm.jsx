@@ -78,7 +78,7 @@ const EditForm = () => {
                 </div>
 
                 <div>
-                    <label htmlFor='password'>Last Password</label>
+                    <label htmlFor='password'>Password</label>
                     <input
                         type="password"
                         placeholder='*****'
