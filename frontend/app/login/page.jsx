@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect } from "react"
 import SideView from "@/components/SideView"
 import LoginForm from "@/components/LoginForm"
 import Redirection from "@/components/Redirection"
@@ -10,9 +11,12 @@ const Page = () => {
   const { user } = useUserContext()
   const router = useRouter()
 
-  if (user) {
-    router.push(`/${user._id}`)
-  }
+  useEffect(() => {
+    if (user) {
+      router.push(`/${user._id}`)
+    }
+  }, [])
+
   return (
     <div className="page_layout">
       <SideView viewText="Welcome Back!" sideWidth='w-screen lg:w-[47vw]' />

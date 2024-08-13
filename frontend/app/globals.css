@@ -107,6 +107,10 @@ input::placeholder {
   @apply flex flex-col gap-5 md:gap-10;
 }
 
+.side_links {
+  @apply absolute right-5 top-7 md:right-auto md:top-auto md:left-7 md:bottom-7;
+}
+
 .form_title {
   @apply font-bold font-dmSans text-3xl md:text-5xl;
 }
@@ -119,8 +123,20 @@ input::placeholder {
   @apply font-inter font-medium text-lightGrey text-base;
 }
 
+.smooth_transition {
+  @apply transition-all duration-300 ease-in-out;
+}
+
 .submit_btn {
   @apply w-full font-dmSans font-medium text-white text-xl md:text-2xl text-center py-[1.125rem] bg-lightBlue rounded-lg;
+}
+
+.cancel_btn {
+  @apply w-fit font-dmSans text-white text-lg md:text-xl text-center py-[1.125rem] px-6 bg-transparent rounded-lg border-white border-2 smooth_transition hover:bg-white hover:text-black;
+}
+
+.continue_btn {
+  @apply w-fit font-dmSans text-black text-lg md:text-xl text-center py-[1.125rem] px-6 bg-white rounded-lg border-white border-2 smooth_transition hover:bg-transparent hover:text-white;
 }
 
 .headline {
@@ -128,7 +144,7 @@ input::placeholder {
 }
 
 .btn_hover {
-  @apply transition-all duration-300 ease-in-out shadow-md hover:bg-white hover:text-lightBlue disabled:text-white border-2 hover:border-lightBlue disabled:bg-lightBlue disabled:opacity-70;
+  @apply smooth_transition shadow-md hover:bg-white hover:text-lightBlue disabled:text-white border-2 hover:border-lightBlue disabled:bg-lightBlue disabled:opacity-70;
 }
 
 .error {
