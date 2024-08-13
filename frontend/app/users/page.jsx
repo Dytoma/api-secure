@@ -18,7 +18,7 @@ const Page = () => {
     if (!user) {
       router.push('/login')
     }
-  })
+  }, [])
 
   useEffect(() => {
     const fetchUsers = async () => {
