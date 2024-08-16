@@ -5,6 +5,7 @@ import cors from 'cors'
 
 import router from './routes/users.js'
 import userRouter from './routes/userActions.js'
+import taskRouter from './routes/tasks.js'
 
 
 dotenv.config()
@@ -20,6 +21,7 @@ app.use(express.json())
 // utilisation des routes
 app.use('/', router)
 app.use('/:user', userRouter)
+app.use('/tasks', taskRouter)
 
 // se connecter à la base de donnée
 mongoose.connect(process.env.MONGODB_URI)
