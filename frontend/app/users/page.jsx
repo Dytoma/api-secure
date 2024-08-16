@@ -46,7 +46,7 @@ const Page = () => {
       <SideView sideWidth="w-full md:w-24" />
       <div className="grow w-full md:w-auto md:h-screen pt-10 md:pt-20 pl-10 md:pl-28">
         <div>
-          <Link href={`/${user?._id}`} className="font-dmSans font-bold inline text-white bg-lightBlue cursor-pointer rounded-lg py-[10px] px-5 btn_hover">Back</Link>
+          <Link href={`/${user?._id}`} className="primary_btn">Back</Link>
         </div>
         <div className="mt-10 md:mt-24 flex flex-col gap-6 md:gap-10 overflow-y-scroll max-h-[60vh] md:max-h-[75vh]">
           {

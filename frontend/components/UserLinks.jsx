@@ -5,6 +5,7 @@ import { useLogout } from '@/hooks/useLogout'
 import Link from 'next/link'
 import Image from 'next/image'
 import ConfirmationMessage from './ConfirmationMessage'
+import Button from './Button'
 
 const UserLinks = ({ path }) => {
     const { logout } = useLogout()
@@ -15,15 +16,14 @@ const UserLinks = ({ path }) => {
     }
     return (
         <div className='flex md:flex-col gap-4 side_links'>
-            <Link href={`${path}/update`} title='Update'>
-                <Image src='/user-edit.svg' width={34} height={53} alt='Update' />
+            <Link href={`/${path}/tasks`} title='Access tasks' className='cursor-pointer'>
+                <Image src='/task-square.svg' width={34} height={53} alt='Update' className='w-auto h-auto' />
             </Link>
-            <button title='Delete user' onClick={handleDelete}>
-                <Image src='/profile-delete.svg' width={34} height={53} alt='Delete' />
-            </button>
-            <button title='Logout' onClick={() => logout()}>
-                <Image src='/logout.svg' width={34} height={53} alt='Logout' />
-            </button>
+            <Link href={`/${path}/update`} title='Update'>
+                <Image src='/user-edit.svg' width={34} height={53} alt='Update' className='w-auto h-auto' />
+            </Link>
+            <Button altText="Delete account" style="" file="/profile-delete.svg" handleClick={handleDelete} />
+            <Button altText="Logout" style="" file="/logout.svg" handleClick={() => logout()} />
             {message && <ConfirmationMessage setMessage={setMessage} />}
         </div>
     )

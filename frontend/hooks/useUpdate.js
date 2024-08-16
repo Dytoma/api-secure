@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useUserContext } from "./useUserContextHook"
 import { useRouter } from "next/navigation"
+import { useTaskContext } from "./useTaskContext"
 
 export const useUpdate = () => {
     const [error, setError] = useState(null)
@@ -39,6 +40,7 @@ export const useUpdate = () => {
 export const useDeleteUser = () => {
     const [loading, setLoading] = useState(null)
     const { dispatch } = useUserContext()
+    const { dispatch: taskDispatch } = useTaskContext()
     const router = useRouter()
 
     const remove = async (_id, token) => {
@@ -61,6 +63,7 @@ export const useDeleteUser = () => {
 
             console.log(json.message)
             dispatch({ type: 'LOGOUT' })
+            taskDispatch({ type: 'SET_TASKS', payload: null })
             setLoading(false)
             router.push('/login')
         }

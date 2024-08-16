@@ -104,7 +104,7 @@ input::placeholder {
 }
 
 .form_col {
-  @apply flex flex-col gap-5 md:gap-10;
+  @apply flex flex-col gap-5 md:gap-6;
 }
 
 .side_links {
@@ -115,12 +115,20 @@ input::placeholder {
   @apply font-bold font-dmSans text-3xl md:text-5xl;
 }
 
+.chart_title {
+  @apply font-medium font-dmSans text-xl md:text-3xl;
+}
+
 .form_view {
   @apply lg:h-screen flex items-center w-screen lg:w-auto grow px-7 py-10 md:py-20 lg:py-0 lg:px-52;
 }
 
 .paragraph_text {
   @apply font-inter font-medium text-lightGrey text-base;
+}
+
+.task_info {
+  @apply font-inter text-lightGrey text-xs md:text-base md:font-medium;
 }
 
 .smooth_transition {
@@ -135,12 +143,20 @@ input::placeholder {
   @apply w-fit font-dmSans text-white text-lg md:text-xl text-center py-[1.125rem] px-6 bg-transparent rounded-lg border-white border-2 smooth_transition hover:bg-white hover:text-black;
 }
 
+.cancel_edit_btn {
+  @apply w-fit font-dmSans text-black bg-white text-base md:text-lg text-center py-2 px-3 bg-transparent rounded-lg border-black border-2 smooth_transition hover:bg-black hover:text-white;
+}
+
 .continue_btn {
-  @apply w-fit font-dmSans text-black text-lg md:text-xl text-center py-[1.125rem] px-6 bg-white rounded-lg border-white border-2 smooth_transition hover:bg-transparent hover:text-white;
+  @apply w-fit font-dmSans text-black text-base md:text-lg text-center py-[1.125rem] px-6 bg-white rounded-lg border-white border-2 smooth_transition hover:bg-transparent hover:text-white;
+}
+
+.continue_edit_btn {
+  @apply w-fit font-dmSans text-white text-lg md:text-xl text-center py-2 px-3 bg-black rounded-lg border-2 smooth_transition hover:bg-transparent hover:text-black;
 }
 
 .headline {
-  @apply font-dmSans font-bold text-4xl lg:text-[4rem] lg:leading-normal;
+  @apply font-dmSans font-bold text-2xl lg:text-5xl lg:leading-normal;
 }
 
 .btn_hover {
@@ -149,4 +165,12 @@ input::placeholder {
 
 .error {
   @apply font-inter font-medium text-red-700 text-base py-3 px-8 rounded-lg border-[1px] border-red-500 bg-red-300;
+}
+
+.btn_svg {
+  @apply p-2 md:p-4 rounded-full hover:bg-slate-400 smooth_transition w-fit h-fit;
+}
+
+.primary_btn {
+  @apply font-dmSans font-bold inline text-white bg-lightBlue cursor-pointer rounded-lg py-[10px] px-5 btn_hover;
 }

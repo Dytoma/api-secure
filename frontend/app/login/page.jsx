@@ -15,7 +15,7 @@ const Page = () => {
     if (user) {
       router.push(`/${user._id}`)
     }
-  }, [])
+  }, [user])
 
   return (
     <div className="page_layout">

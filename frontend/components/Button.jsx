@@ -1,8 +1,10 @@
-import React from 'react'
+import Image from "next/image"
 
-const Button = ({text}) => {
+const Button = ({ style, file, altText, handleClick }) => {
   return (
-    <button>{text}</button>
+    <button title={altText} className={style} onClick={handleClick}>
+      <Image src={file} width={34} height={53} alt={altText} className="w-auto h-auto" />
+    </button>
   )
 }
 

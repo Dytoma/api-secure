@@ -1,13 +1,14 @@
 "use client"
 
 import React from 'react'
-import { useState } from 'react'
 import { useLogin } from '@/hooks/useLogin'
+import { useLoginFields } from '@/hooks/useFields'
+import FormField from './FormField'
+import Error from './Error'
 
 const LoginForm = () => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const {login, isLoading, error} = useLogin()
+  const { login, isLoading, error } = useLogin()
+  const { fields, email, password } = useLoginFields()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -19,32 +20,10 @@ const LoginForm = () => {
     <div className='mb-10 mt-8 md:mb-20 md:mt-16'>
       <form className='form_col' onSubmit={handleSubmit}>
 
-        <div>
-          <label>Email Address</label>
-          <input 
-            type='email'
-            placeholder='username@gmail.com'
-            name='userName'
-            id='userName'
-            onChange={(e) => setEmail(e.target.value)}
-            value={email}
-          />
-        </div>
+        {fields.map((field) => <FormField field={field} key={field.id} />)}
 
-        <div>
-          <label htmlFor='passwd'>Password</label>
-          <input
-            type="password"
-            placeholder='*****' 
-            name='passwd'
-            id='passwd'
-            onChange={(e) => setPassword(e.target.value)}
-            value={password}
-          />
-        </div>
-
-        <button type='submit' className='submit_btn btn_hover' disabled={isLoading}>{isLoading ? 'Loading...': 'Login'}</button>
-        {error && <p className='paragraph_text error'>{error}</p>}
+        <button type='submit' className='submit_btn btn_hover' disabled={isLoading}>{isLoading ? 'Loading...' : 'Login'}</button>
+        {error && <Error error={error} />}
       </form>
     </div>
   )
