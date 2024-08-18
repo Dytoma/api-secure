@@ -5,7 +5,7 @@ export const getAllTasks = async (req, res) => {
     const user_id = req.user._id
 
     try {
-        const tasks = await Task.find({ user_id }).sort({ createdAt: -1 })
+        const tasks = await Task.find({ user_id }).exec()
 
         res.status(200).json(tasks)
     } catch (error) {
@@ -14,14 +14,13 @@ export const getAllTasks = async (req, res) => {
 }
 
 export const createNewTask = async (req, res) => {
-    const user_id = req.user._id
-    const { text, start_date, duration } = req.body
+    const { text, start_date, duration, user_id, parent, progress, order } = req.body
 
     if (!text || !start_date || !duration) {
         return res.status(400).json({ error: "All fields must be filled" })
     }
     try {
-        const task = await Task.create({ ...req.body, user_id })
+        const task = await Task.create({ text, start_date, duration, user_id, parent, progress, order })
 
         res.status(200).json(task)
     } catch (error) {
