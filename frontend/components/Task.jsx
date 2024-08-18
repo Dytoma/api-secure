@@ -11,7 +11,7 @@ const Task = ({ task }) => {
     const [edit, setEdit] = useState(false)
 
     const handleDelete = async () => {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_LOCAL_BACKEND}/tasks/${task._id}`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_LINK}/tasks/${task._id}`, {
             method: 'DELETE',
             headers: {
                 'authorization': `Omar ${user?.token}`

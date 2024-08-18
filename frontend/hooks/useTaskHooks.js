@@ -12,7 +12,7 @@ export const useTaskAdd = () => {
         setError(null)
         setIsLoading(true)
 
-        const response = await fetch(`${process.env.NEXT_PUBLIC_LOCAL_BACKEND}/tasks`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_LINK}/tasks`, {
             method: 'POST',
             body: JSON.stringify({...task, user_id: user?._id}),
             headers: {
@@ -46,7 +46,7 @@ export const useTaskUpdate = () => {
         setError(null)
         setIsLoading(true)
 
-        const response = await fetch(`${process.env.NEXT_PUBLIC_LOCAL_BACKEND}/tasks/${task._id}`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_LINK}/tasks/${task._id}`, {
             method: 'PATCH',
             body: JSON.stringify({ ...task, user_id: user?._id }),
             headers: {
@@ -74,7 +74,7 @@ export const useTaskDelete = () => {
     const { user } = useUserContext()
 
     const deleteTask = async (_id) => {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_LOCAL_BACKEND}/tasks/${_id}`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_LINK}/tasks/${_id}`, {
             method: 'DELETE',
             headers: {
                 'authorization': `Delete ${user?.token}`
@@ -97,7 +97,7 @@ export const useFetchTasks = () => {
     const { user } = useUserContext()
 
     const fetchTasks = async () => {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_LOCAL_BACKEND}/tasks`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_LINK}/tasks`, {
             method: 'GET',
             headers: {
                 'authorization': `Dytoma ${user?.token}`
